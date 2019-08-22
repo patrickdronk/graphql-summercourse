@@ -1,4 +1,58 @@
 type Query {
     hello: String
     hello_you(name: String): String
+    pizzas: [Pizza]
+    sauces: [Sauce]
+    toppings: [Topping]
+    crusts: [Crust]
+}
+
+type Mutation {
+    createPizza(pizza: createPizzaInput): Pizza
+}
+
+type Subscription {
+    pizzaAddedEvent: String
+}
+
+input createPizzaInput {
+    name: String,
+    crust: ID,
+    sauce: ID,
+    toppings: [ID]
+}
+
+type Pizza {
+    id: ID
+    name: String
+    description: String
+    image: String
+    toppings: [Topping]
+    sauce: Sauce
+}
+
+type Topping {
+    id: ID
+    name: String
+    allergen: Allergen
+}
+
+type Allergen {
+    id: ID
+    name: String
+}
+
+type Sauce {
+    id: ID
+    name: String
+}
+
+type Crust {
+    id: ID
+    name: String
+    size: Size
+}
+
+type Size {
+    cm: Int
 }
