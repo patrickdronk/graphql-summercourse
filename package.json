@@ -7,7 +7,7 @@
   "author": "Patrick Dronk <patrickdronk@me.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --quiet index.js"
+    "start": "nodemon --quiet -e js,graphql index.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
